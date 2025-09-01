@@ -1,15 +1,15 @@
 function handleResponsive() {
-  const circles = document.querySelectorAll(".orbit, .orbit2, .circle, .content1, .content11, .content2, .content22, .content3, .content33, .content4, .content44, .content5, .content55, .content6, .content66");
+  const circles = document.querySelectorAll(".orbit ");
 
-  if (window.innerWidth < 768) {
+  if (window.innerWidth <= 768) {
     circles.forEach(c => c.style.animation = "none"); // stop
   } else {
-    circles.forEach(c => c.style.animation = "rotate 10s linear infinite"); // resume
+    circles.forEach(c => c.style.animation = "spin 40s linear infinite"); // resume
   }
 }
 
 // Run on load
-handleResponsive();
+// handleResponsive();
 
 // Run on resize
 window.addEventListener("resize", handleResponsive);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       circle66.style.visibility= "hidden";
 
       
-  
+      if (window.innerWidth > 768) {
 
     orbit.addEventListener("mouseenter", () => {  
         // pause ALL rotating elements (orbit + circles)
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".orbit, .orbit2, .circle, .content1, .content11, .content2, .content22, .content3, .content33, .content4, .content44, .content5, .content55, .content6, .content66")
           .forEach(el => el.style.animationPlayState = "running");
       });
-    });
-
+    }});
+  
 
 
 
