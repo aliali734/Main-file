@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali</title>
+  <meta name="description" content="Portfolio of Ali — C Developer and Web Designer. Explore my skills, projects, pricing, and contact details.">
+  <link rel="stylesheet" href="Main-file.css">
+  <link rel="icon" href="1.JPG" type="image/jpeg">
+  <!-- Google Fonts ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&" rel="stylesheet">
+  <!-- Font Awesome for icon---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <script src="https://kit.fontawesome.com/d55f670ce3.js" crossorigin="anonymous"></script>
+  <!--Website identity colors-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <style>
+    :root{
+      --surface: #E6E7E8;       /* card / hero overlay base */
+      --bg: #F7F7F8;            /* page background (very light silver) */
+      --accent: #5A6168;        /* cool gray (use for accents, borders) */
+      --accent-strong: #4B5563; /* darker accent for hover, focus */ 
+      --text: #111216;          /* primary text (very dark) */
+      --accent-900: #1F2224;    /* near-black for headings */
+      --glass: rgba(255,255,255,0.12); /* frosted panels */
+      --shadow: 0 6px 30px rgba(3,10,25,0.12);
+    }
+/* dark theme  */
+    .dark {
+      --accent: #9CA3AF;
+      --accent-strong: #D1D5DB;
+      --bg: #111216;           /* dark page background */
+      --surface: #1F1F23;      /* panels / cards */
+      --text: #F3F4F6;         /* light text */
+      --muted: #9CA3AF;
+      --inverse-text: #111216;
+      --glass: rgba(17,18,22,0.35);
+      --shadow: 0 6px 30px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+  Navigation Bar
+  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+  <header class="nav">
+    <div class="logo">
+      <img src="3.png" alt="User profile picture or company logo">
+    </div>
+    <button id="mobile-toggle"
+            class="mobile-toggle"
+            aria-controls="primary-menu"
+            aria-expanded="false"
+            aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-menu" class="pages nav-menu" role="navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </header>
+  <main>
+    <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+    Hero Page
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="description"  style="margin-top:48px;">
+            <h1>Grow Your Business<br>With Us</h1>
+            <p class="lead">Develop yourself and impress people with the level you've reached. We're here to help you build a website that expresses yourself.</p>
+          </div>
+        </div>
+      </section>
+      <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+      About Page
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+      <section id="about" class="about">
+        <h2 class="main-title" >About Me</h2>
+        <div class="container">
+          <div class="desc">
+            <!--  Orbit and large circles for describing skills -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="orbit1" id="orbit1">
+              <div class="circle" id="circle1" role="region" aria-hidden="true" aria-labelledby="circle11-label"><div class="content1"><h2 id="circle11-label">Coding</h2><p>Coding transforms ideas into functional software. It combines logic, creativity, and precision to build applications, websites, and tools. Mastering languages like Python and JavaScript develops adaptability, critical thinking, and innovation—making coding one of the most powerful skills in today’s digital age.</p></div></div>
+              <div class="circle" id="circle2" role="region" aria-hidden="true" aria-labelledby="circle22-label"><div class="content2"><h2 id="circle22-labe2">Design</h2><p>Design shapes how people interact with products. It balances aesthetics and usability, creating intuitive, inspiring experiences. From colors to layouts, great design anticipates user needs and tells stories. Using tools like Figma or Adobe, design builds trust, engagement, and lasting impact.</p></div></div>
+              <div class="circle" id="circle3" role="region" aria-hidden="true" aria-labelledby="circle33-label"><div class="content3"><h2 id="circle33-labe3">IT</h2><p>IT powers the digital world. It secures data, manages networks, and drives efficiency across industries. From cloud computing to cybersecurity, IT professionals build reliable systems that enable growth. Behind the scenes, IT fuels collaboration, protects information, and ensures organizations stay future-ready.</p></div></div>
+              <div class="circle" id="circle4" role="region" aria-hidden="true" aria-labelledby="circle44-label"><div class="content4"><h2 id="circle44-labe4">Atomation</h2><p>Automation boosts efficiency by handling repetitive tasks with precision. From robotics to AI, it saves time, cuts costs, and reduces errors. Far from replacing humans, automation empowers people to focus on creative, strategic work—reshaping industries and redefining productivity worldwide.</p></div></div>
+              <div class="circle" id="circle5" role="region" aria-hidden="true" aria-labelledby="circle55-label"><div class="content5"><h2 id="circle55-labe5">Speed</h2><p>Speed defines modern success. Whether delivering services, processing data, or deploying updates, fast systems build trust and competitiveness. Innovations like high-performance processors and fiber internet set new standards. True excellence lies in balancing speed with accuracy, ensuring progress without sacrificing quality.</p></div></div>
+              <div class="circle" id="circle6" role="region" aria-hidden="true" aria-labelledby="circle66-label"><div class="content6"><h2 id="circle66-labe6">Problem Solving</h2><p>Problem solving turns obstacles into opportunities. It requires creativity, logic, and adaptability. In technology, it means debugging code, optimizing systems, or innovating solutions. Strong problem solvers anticipate challenges, act effectively, and transform setbacks into breakthroughs—driving progress in any field.</p></div></div>
+              <div class="circleh"><h1 class="po">Who am I and what can I do for you?</h1></div>
+            </div>
+              <!-- Orbit and small circles for icons and skills-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="orbit2" id="orbit2">
+              <div class="circle" id="circle11" role="button" tabindex="0" aria-controls="circle1" aria-expanded="false" aria-label="Coding — show more"         ><div class="content11"><i class="fa-solid fa-code" aria-hidden="true"></i><p>Coding</p></div></div>
+              <div class="circle" id="circle22" role="button" tabindex="1" aria-controls="circle2" aria-expanded="false" aria-label="Design — show more"         ><div class="content22"><i class="fa-solid fa-palette" aria-hidden="true"></i><p>Design</p></div></div>
+              <div class="circle" id="circle33" role="button" tabindex="2" aria-controls="circle3" aria-expanded="false" aria-label="IT — show more"             ><div class="content33"><i class="fa-solid fa-computer" aria-hidden="true"></i><p>IT</p></div></div>
+              <div class="circle" id="circle44" role="button" tabindex="3" aria-controls="circle4" aria-expanded="false" aria-label="Atomation — show more"      ><div class="content44"><i class="fa-solid fa-gears" aria-hidden="true"></i><p>Automation</p></div></div>
+              <div class="circle" id="circle55" role="button" tabindex="4" aria-controls="circle5" aria-expanded="false" aria-label="Speed — show more"          ><div class="content55"><i class="fa-solid fa-bolt" aria-hidden="true"></i><p>Speed</p></div></div>
+              <div class="circle" id="circle66" role="button" tabindex="5" aria-controls="circle6" aria-expanded="false" aria-label="Problem Solving — show more"><div class="content66"><i class="fa-solid fa-question" aria-hidden="true"></i><p>Problem Solving</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+      Projects
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+    <section id="projects" class="projects">
+      <h2 class="main-title" >Projects</h2>
+      <div class="container">
+        <div class="desc">
+          <!--  Orbit and large circles for describing skills -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          <div class="orbit3" id="orbit3">
+            <div class="circle" id="circle7"   role="region" aria-hidden="true" aria-labelledby="circle77-label"  ><div class="content7"  ><h2 id="circle7-label">Coding</h2><p>Coding transforms ideas into functional software. It combines logic, creativity, and precision to build applications, websites, and tools. Mastering languages like Python and JavaScript develops adaptability, critical thinking, and innovation—making coding one of the most powerful skills in today’s digital age.</p></div></div>
+            <div class="circle" id="circle8"   role="region" aria-hidden="true" aria-labelledby="circle88-label"  ><div class="content8"  ><h2 id="circle8-labe2">Design</h2><p>Design shapes how people interact with products. It balances aesthetics and usability, creating intuitive, inspiring experiences. From colors to layouts, great design anticipates user needs and tells stories. Using tools like Figma or Adobe, design builds trust, engagement, and lasting impact.</p></div></div>
+            <div class="circle" id="circle9"   role="region" aria-hidden="true" aria-labelledby="circle99-label"  ><div class="content9"  ><h2 id="circle9-labe3">IT</h2><p>IT powers the digital world. It secures data, manages networks, and drives efficiency across industries. From cloud computing to cybersecurity, IT professionals build reliable systems that enable growth. Behind the scenes, IT fuels collaboration, protects information, and ensures organizations stay future-ready.</p></div></div>
+            <div class="circle" id="circle10"  role="region" aria-hidden="true" aria-labelledby="circle1010-label"><div class="content10" ><h2 id="circle10-labe4">Atomation</h2><p>Automation boosts efficiency by handling repetitive tasks with precision. From robotics to AI, it saves time, cuts costs, and reduces errors. Far from replacing humans, automation empowers people to focus on creative, strategic work—reshaping industries and redefining productivity worldwide.</p></div></div>
+            <div class="circle" id="circle12"  role="region" aria-hidden="true" aria-labelledby="circle1212-label"><div class="content12" ><h2 id="circle12-labe5">Speed</h2><p>Speed defines modern success. Whether delivering services, processing data, or deploying updates, fast systems build trust and competitiveness. Innovations like high-performance processors and fiber internet set new standards. True excellence lies in balancing speed with accuracy, ensuring progress without sacrificing quality.</p></div></div>
+            <div class="circle" id="circle13"  role="region" aria-hidden="true" aria-labelledby="circle1313-label"><div class="content13" ><h2 id="circle13-labe6">Problem Solving</h2><p>Problem solving turns obstacles into opportunities. It requires creativity, logic, and adaptability. In technology, it means debugging code, optimizing systems, or innovating solutions. Strong problem solvers anticipate challenges, act effectively, and transform setbacks into breakthroughs—driving progress in any field.</p></div></div>
+            <div class="circleh"><h1 class="po2">Take a look at my projects</h1></div>
+          </div>
+            <!-- Orbit and small circles for icons and skills-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          <div class="orbit4" id="orbit4">
+            <div class="circle" id="circle77"    tabindex="0" aria-controls="circle7"   aria-expanded="false" aria-label="Coding — show more"         ><a href="template1/template1.html"><div class="content77"  ><h3>C</h3></div></a></div>
+            <div class="circle" id="circle88"    tabindex="1" aria-controls="circle8"   aria-expanded="false" aria-label="Design — show more"         ><a href="template2/template2.html"><div class="content88"  ><h3>C++</h3></div></a></div>
+            <div class="circle" id="circle99"    tabindex="2" aria-controls="circle9"   aria-expanded="false" aria-label="IT — show more"             ><a href="template3/templat2.html"><div class="content99"  ><h3>Python</h3></div></a></div>
+            <div class="circle" id="circle1010"  tabindex="3" aria-controls="circle10"  aria-expanded="false" aria-label="Atomation — show more"      ><a href="template4/template4.html"><div class="content1010"><h3>JavaScript</h3></div></a></div>
+            <div class="circle" id="circle1212"  tabindex="4" aria-controls="circle12"  aria-expanded="false" aria-label="Speed — show more"          ><a href="template5/template5.css"><div class="content1212"><h3>HTML/CSS</h3></div></a></div>
+            <div class="circle" id="circle1313"  tabindex="5" aria-controls="circle13"  aria-expanded="false" aria-label="Problem Solving — show more"><a href="template6/template1.html"><div class="content1313"><h3>UI</h3></div></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+      Pricing
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+    <section class="pricing" id="pricing">
+      <h2 class="main-title" >pricing</h2>
+      <div class="container">
+          <div class="plans">
+              <div class="plan">
+                  <div class="head">
+                      <h3>basic</h3>
+                      <span>19</span>
+                  </div>
+                  <ul>
+                      <li>feature no 1</li>
+                      <li>extra feature</li>
+                      <li>extra feature no 2</li>
+                      <li>feature</li>
+                  </ul>
+                  <div class="foot">
+                      <a href="#">buy now</a>
+                  </div>
+              </div>
+              <div class="plan">
+                  <div class="head">
+                      <h3>basic</h3>
+                      <span>29</span>
+                  </div>
+                  <ul>
+                      <li>feature no 1</li>
+                      <li>extra feature</li>
+                      <li>extra feature no 2</li>
+                      <li>feature</li>
+                  </ul>
+                  <div class="foot">
+                      <a href="#">buy now</a>
+                  </div>
+              </div>
+              <div class="plan">
+                  <div class="head">
+                      <h3>basic</h3>
+                      <span>39</span>
+                  </div>
+                  <ul>
+                      <li>feature no 1</li>
+                      <li>extra feature</li>
+                      <li>extra feature no 2</li>
+                      <li>feature</li>
+                  </ul>
+                  <div class="foot">
+                      <a href="#">buy now</a>
+                  </div>
+              </div>
+              <div class="plan">
+                  <div class="head">
+                      <h3>basic</h3>
+                      <span>49</span>
+                  </div>
+                  <ul>
+                      <li>feature no 1</li>
+                      <li>extra feature</li>
+                      <li>extra feature no 2</li>
+                      <li>feature</li>
+                  </ul>
+                  <div class="foot">
+                      <a href="#">buy now</a>
+                  </div>
+              </div>
+          </div>
+          <p class="contact-text"> contact us if you have special request</p> 
+          <a href="#" class="contact-link">contact us</a>
+      </div>
+    </section>
+      <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+      Contact
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+      <section id="contact" class="contact">
+        <h2 class="main-title" >Contact Me</h2>
+        <div class="container">
+          <div class="contact-info">
+            <h3>Let’s Work Together</h3>
+            <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+            <ul>
+              <li>📧 Email: <a href="mailto:ahmedyacin3374@gmail.com">ahmedyacin3374@gmail.com</a></li>
+              <li><i class="fa-brands fa-instagram"></i>Instagram: <a href="https://www.instagram.com/prog.log7/" target="_blank" rel="noopener noreferrer">@prog.log7</a></li>
+              <li><i class="fa-brands fa-x-twitter"></i> X <a href="https://x.com/AhmedY22211" target="_blank" rel="noopener noreferrer">@AhmedY22211</a></li>
+            </ul>
+          </div>
+          <form  class="contact-form" action="https://formspree.io/f/xblaepgv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_next" value="thanks.html">
+          </form>
+        </div>
+      </section>
+      <!--=============================================================================================================================================================================================================================================================================================================================================================================================================================================================
+      Footer
+    =================================================================================================================================================================================================================================================================================================================================================================================================================================================================-->
+  </main>  
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Ali. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://github.com/aliali734" target="_blank">GitHub</a>
+        <a href="https://www.facebook.com/prog1log" target="_blank">facebook</a>
+        <a href="https://x.com/AhmedY22211" target="_blank">X</a>
+        <a href="https://www.instagram.com/prog.log7/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Font Awesome for icon---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <script src="Main-file.js"></script>
+</body>
+</html>

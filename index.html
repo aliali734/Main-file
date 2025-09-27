@@ -1,262 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali | Portfolio</title>
-  <meta name="description" content="Portfolio of Ali — C Developer and Web Designer. Explore my skills, projects, pricing, and contact details.">
-  <link rel="stylesheet" href="Main-file.css">
-  <link rel="icon" href="1.JPG" type="image/jpeg">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/d55f670ce3.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali — C Developer & Web Designer</title>
+    <meta name="description" content="Portfolio of Ali — C Developer and Web Designer. Explore my skills, projects, pricing, and contact details.">
+    <meta name="author" content="Ali">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#111216">
+  
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ali — C Developer & Web Designer">
+    <meta property="og:description" content="Explore my portfolio, projects, pricing, and contact details.">
+    <meta property="og:image" content="https://aliali734.github.io/Main-file/1.jpg">
+    <meta property="og:url" content="https://aliali734.github.io/Main-file/">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ali — C Developer & Web Designer">
+    <meta name="twitter:description" content="Explore my portfolio, projects, pricing, and contact details.">
+    <meta name="twitter:image" content="https://aliali734.github.io/Main-file/1.jpg">
+  
+    <!-- Styles & Fonts -->
+    <link rel="stylesheet" href="Main-file.css">
+    <link rel="icon" href="1.JPG" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d55f670ce3.js" crossorigin="anonymous"></script>
+  </head>
   <style>
-  :root {
-    --primary: #0078ff;   /* Main accent color (blue) */
-    --dark: #222;         /* Dark text */
-    --light: #f9f9f9;     /* Light background */
-    --gray: #555;         /* Secondary text color */
-  }
-</style>
+
+    :root {
+      --bg: linear-gradient(90deg,#8e8c91 , #E6E7E8, #8e8c91);              /* page background (light) */
+      --h1: #1F2224;              /* main title (H1) — strong near-black */
+      --h2: #4B5563;              /* subtitle (H2) — medium-dark accent */
+      --h3: #5A6168;              /* secondary title (H3) — lighter accent */
+      --text: #111216;            /* body text / paragraphs */
+      --glass: rgba(255,255,255,0.12);   /* frosted glass overlay */
+      --panel: #E6E7E8;                  /* cards, nav background, circles (light panel) */
+      --shadow: 0px 5px 30px rgba(0,0,0);
+      /* spacing scale — single source of truth (paste after :root vars) */
+      /* base spacing unit (responsive) */
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 20px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-xxl: 80px;
+
+      /* responsive versions using clamp (keeps spacing balanced on small/large screens) */
+      --gutter: clamp(16px, 4vw, 40px);
+      --section-pad-vertical: clamp(32px, 6vw, 64px);
+
+    }
+    /* Dark theme override — same variable names, inverted values */
+    .dark {
+      --bg: linear-gradient(135deg, #111216, #1F2224);
+      --h1: #F3F4F6;            /* light H1 on dark */
+      --h2: #D1D5DB;            /* lighter subtitle for dark */
+      --h3: #9CA3AF;            /* secondary title in dark */
+      --text: #E6E7E8;          /* paragraph text in dark */
+      --glass: rgba(17,18,22,0.35);
+      --panel: #1F1F23;
+      --shadow: 0 6px 30px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+<!-- Skip link for keyboard users -->
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- 🔹 Navigation -->
-  <header class="nav">
-    <div class="logo">
-      <!--Add your own photo-->
-      <img src="1.png" alt="Ali Logo">
-    </div>
-    <nav class="pages">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header class="nav" role="banner">
+  <div class="logo">
+    <!-- wrap logo in link to home and provide explicit width/height -->
+    <a href="#home" aria-label="Go to homepage">
+      <img src="3.png" alt="FG logo" width="50" height="50" />
+    </a>
+  </div>
 
-  <!-- 🔹 Hero -->
-  <section id="home" class="hero">
-    <div class="circle center-person">
-      <!--Add your own photo-->
-      <img src="1.png" alt="Ali at desk">
-    </div>
+  <!-- Mobile toggle -->
+  <button id="mobile-toggle"
+          class="mobile-toggle"
+          type="button"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          aria-label="Open main menu">
+    <span class="hamburger" aria-hidden="true"></span>
+  </button>
+
+  <nav id="primary-menu" class="pages nav-menu" role="navigation" aria-label="Primary site navigation">
+    <ul>
+      <li><a href="#home" class="active" aria-current="page">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <button id="theme-toggle" class="theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+</header>
+
+
+<main id="main-content" tabindex="-1">
+    <!-- Hero Page -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="description" style="margin-top:48px;">
+          <!-- Page's single H1 -->
+          <h1 id="hero-title">Grow Your Business<br>With Us</h1>
+          <p class="lead">Develop yourself and impress people with the level you've reached. We're here to help you build a website that expresses yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Page -->
+<!-- RESTORED: original about section (big circles in orbit1, small controls in orbit2) -->
+<section id="about" class="about" aria-labelledby="about-title">
+  <h2 id="about-title" class="main-title">About Me</h2>
+  <div class="container">
     <div class="desc">
-      <div class="orbit2" id="orbit2">
-        <div class="circle" id="circle11"><div class="content11"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
-        <div class="circle" id="circle22"><div class="content22"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
-        <div class="circle" id="circle33"><div class="content33"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
-        <div class="circle" id="circle44"><div class="content44"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
-        <div class="circle" id="circle55"><div class="content55"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
-        <div class="circle" id="circle66"><div class="content66"><h2>your skill</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div></div>
+      <!-- Orbit and large circles for describing skills -->
+      <div class="orbit1" id="orbit1">
+        <div class="circle" id="circle1" role="region" aria-labelledby="circle1-label">
+          <div class="content1">
+            <h3 id="circle1-label">Coding</h3>
+            <p>Coding transforms ideas into functional software. It combines logic, creativity, and precision to build applications, websites, and tools. Mastering languages like Python and JavaScript develops adaptability, critical thinking, and innovation—making coding one of the most powerful skills in today’s digital age.</p>
+          </div>
+        </div>
+
+        <div class="circle" id="circle2" role="region" aria-labelledby="circle2-label">
+          <div class="content2">
+            <h3 id="circle2-label">Design</h3>
+            <p>Design shapes how people interact with products. It balances aesthetics and usability, creating intuitive, inspiring experiences. From colors to layouts, great design anticipates user needs and tells stories. Using tools like Figma or Adobe, design builds trust, engagement, and lasting impact.</p>
+          </div>
+        </div>
+
+        <div class="circle" id="circle3" role="region" aria-labelledby="circle3-label">
+          <div class="content3">
+            <h3 id="circle3-label">IT</h3>
+            <p>IT powers the digital world. It secures data, manages networks, and drives efficiency across industries. From cloud computing to cybersecurity, IT professionals build reliable systems that enable growth. Behind the scenes, IT fuels collaboration, protects information, and ensures organizations stay future-ready.</p>
+          </div>
+        </div>
+
+        <div class="circle" id="circle4" role="region" aria-labelledby="circle4-label">
+          <div class="content4">
+            <h3 id="circle4-label">Automation</h3>
+            <p>Automation boosts efficiency by handling repetitive tasks with precision. From robotics to AI, it saves time, cuts costs, and reduces errors. Far from replacing humans, automation empowers people to focus on creative, strategic work—reshaping industries and redefining productivity worldwide.</p>
+          </div>
+        </div>
+
+        <div class="circle" id="circle5" role="region" aria-labelledby="circle5-label">
+          <div class="content5">
+            <h3 id="circle5-label">Speed</h3>
+            <p>Speed defines modern success. Whether delivering services, processing data, or deploying updates, fast systems build trust and competitiveness. Innovations like high-performance processors and fiber internet set new standards. True excellence lies in balancing speed with accuracy, ensuring progress without sacrificing quality.</p>
+          </div>
+        </div>
+
+        <div class="circle" id="circle6" role="region" aria-labelledby="circle6-label">
+          <div class="content6">
+            <h3 id="circle6-label">Problem Solving</h3>
+            <p>Problem solving turns obstacles into opportunities. It requires creativity, logic, and adaptability. In technology, it means debugging code, optimizing systems, or innovating solutions. Strong problem solvers anticipate challenges, act effectively, and transform setbacks into breakthroughs—driving progress in any field.</p>
+          </div>
+        </div>
+
+        <div class="circleh">
+          <h2 class="po">Who am I and what can I do for you?</h2>
+        </div>
       </div>
-      <div class="orbit" id="orbit">
-        <div class="circle" id="circle1"><div class="content1"><i class="fa-solid fa-code"></i><p>Coding</p></div></div>
-        <div class="circle" id="circle2"><div class="content2"><i class="fa-solid fa-palette"></i><p>Design</p></div></div>
-        <div class="circle" id="circle3"><div class="content3"><i class="fa-solid fa-computer"></i><p>IT</p></div></div>
-        <div class="circle" id="circle4"><div class="content4"><i class="fa-solid fa-gears"></i><p>Automation</p></div></div>
-        <div class="circle" id="circle5"><div class="content5"><i class="fa-solid fa-bolt"></i><p>Speed</p></div></div>
-        <div class="circle" id="circle6"><div class="content6"><i class="fa-solid fa-question"></i><p>Problem Solving</p></div></div>
-    </div>
-    </div>
-  </section>
-  
-<!--<div class="desc1"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a, numquam facilis possimus architecto provident magni enim sed!</p></div>-->
-  <!-- 🔹 About -->
-  <h1 class="main-title" id="about">About Me</h1>
-  <div class="about">
-    <div class="container">
-      <div class="image">
-        <img src="2.png" alt="Developer working on laptop">
+
+      <!-- Orbit and small circles for icons and skills -->
+      <div class="orbit2" id="orbit2" aria-hidden="false">
+        <button class="circle" id="circle11" role="button" tabindex="0" aria-controls="circle1" aria-expanded="false" aria-label="Coding — show more">
+          <div class="content11"><i class="fa-solid fa-code" aria-hidden="true"></i><p>Coding</p></div>
+        </button>
+
+        <button class="circle" id="circle22" role="button" tabindex="0" aria-controls="circle2" aria-expanded="false" aria-label="Design — show more">
+          <div class="content22"><i class="fa-solid fa-palette" aria-hidden="true"></i><p>Design</p></div>
+        </button>
+
+        <button class="circle" id="circle33" role="button" tabindex="0" aria-controls="circle3" aria-expanded="false" aria-label="IT — show more">
+          <div class="content33"><i class="fa-solid fa-computer" aria-hidden="true"></i><p>IT</p></div>
+        </button>
+
+        <button class="circle" id="circle44" role="button" tabindex="0" aria-controls="circle4" aria-expanded="false" aria-label="Automation — show more">
+          <div class="content44"><i class="fa-solid fa-gears" aria-hidden="true"></i><p>Automation</p></div>
+        </button>
+
+        <button class="circle" id="circle55" role="button" tabindex="0" aria-controls="circle5" aria-expanded="false" aria-label="Speed — show more">
+          <div class="content55"><i class="fa-solid fa-bolt" aria-hidden="true"></i><p>Speed</p></div>
+        </button>
+
+        <button class="circle" id="circle66" role="button" tabindex="0" aria-controls="circle6" aria-expanded="false" aria-label="Problem Solving — show more">
+          <div class="content66"><i class="fa-solid fa-question" aria-hidden="true"></i><p>Problem Solving</p></div>
+        </button>
       </div>
-      <div class="description">
-        <h3>Who am I & what can I do for you?</h3>
-        <p>
-          I’m a passionate <strong>C Developer</strong> and <strong>Web Designer</strong>.  
-          I enjoy creating efficient code, solving problems, and designing  
-          clean, user-friendly interfaces. My goal is to bring ideas to life  
-          through programming and design.
-        </p>
-        <ul>
-          <li>💻 Experienced in C, C++, HTML, CSS, and JavaScript</li>
-          <li>⚡ Interested in automation & fast performance</li>
-          <li>🌍 Exploring freelance and digital product creation</li>
-        </ul>
-        <a href="resume.pdf" class="btn">📄 Download CV</a>
-      </div>
+
     </div>
   </div>
+</section>
 
-  <!-- 🔹 Projects -->
-  <h1 class="main-title" id="projects">Projects</h1>
-  <div class="projects">
-    <div class="container">
-      <div class="project-card">
-        <img src="2.JPG" alt="Portfolio Website project screenshot">
-        <h3>template1</h3>
-        <p>A responsive personal website built with HTML & CSS.</p>
-        <!-- put your Projects here-->
-        <a href="template1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="https://yacin3.gumroad.com/l/pydgmy" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="1.JPG" alt="C Calculator project screenshot">
-        <h3>template2</h3>
-        <p>A responsive personal website built with HTML & CSS.</p>
-        <!-- put your Projects here-->
-        <a href="template2/template2.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="https://yacin3.gumroad.com/l/bduha" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-      <div class="project-card">
-        <img src="project3.png" alt="JavaScript Game project screenshot">
-        <h3>template3</h3>
-        <p>A simple browser game made with JavaScript and Canvas.</p>
-        <!-- put your Projects here-->
-        <a href="templat1/template1.html" target="_blank" class="btn">🔗 View Project</a>
-        <a href="templat1/template1.html" target="_blank" class="btn">Buy</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- 🔹 Pricing -->
-  <h1 class="main-title" id="pricing">Pricing</h1>
-  <div class="pricing">
-    <div class="container">
-      <div class="price-card">
-        <h3>Basic</h3>
-        <p class="price">$50</p>
-        <ul>
-          <li>✔ 1-page Website</li>
-          <li>✔ Responsive Design</li>
-          <li>✖ No Maintenance</li>
-        </ul>
-        <a href="#" class="btn">Get Started</a>
-      </div>
-      <div class="price-card popular">
-        <h3>Standard</h3>
-        <p class="price">$150</p>
-        <ul>
-          <li>✔ Up to 5 Pages</li>
-          <li>✔ Responsive + Modern UI</li>
-          <li>✔ 1 Month Support</li>
-        </ul>
-        <a href="#" class="btn">Get Started</a>
-      </div>
-      <div class="price-card">
-        <h3>Premium</h3>
-        <p class="price">$300</p>
-        <ul>
-          <li>✔ Unlimited Pages</li>
-          <li>✔ Full Custom Design</li>
-          <li>✔ 3 Months Support</li>
-        </ul>
-        <a href="#" class="btn">Get Started</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- 🔹 Contact -->
-  <h1 class="main-title" id="contact">Contact Me</h1>
-  <div class="contact">
-    <div class="container">
-      <div class="contact-info">
-        <h3>Let’s Work Together</h3>
-        <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
-        <ul>
-          <li>📧 Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
-          <li>📱 Telegram: <a href="https://t.me/yourusername" target="_blank">@yourusername</a></li>
-          <li>🐦 X (Twitter): <a href="https://x.com/yourusername" target="_blank">@yourusername</a></li>
-        </ul>
-      </div>
-      <form class="contact-form" action="mailto:yourmail@example.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </div>
+    <!-- Projects -->
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="main-title">Projects</h2>
+      <div class="container">
+        <div class="desc">
+          <div class="orbit3" id="orbit3">
+            <div class="circle" id="circle7" role="region" aria-labelledby="circle7-label">
+              <div class="content7">
+                <h3 id="circle7-label">Coding</h3>
+                <p>...</p>
+              </div>
+            </div>
 
-  <!-- 🔹 Footer -->
-  <footer class="footer">
+            <div class="circle" id="circle8" role="region" aria-labelledby="circle8-label">
+              <div class="content8">
+                <h3 id="circle8-label">Design</h3>
+                <p>...</p>
+              </div>
+            </div>
+
+            <div class="circle" id="circle9" role="region" aria-labelledby="circle9-label">
+              <div class="content9">
+                <h3 id="circle9-label">IT</h3>
+                <p>...</p>
+              </div>
+            </div>
+
+            <div class="circle" id="circle10" role="region" aria-labelledby="circle10-label">
+              <div class="content10">
+                <h3 id="circle10-label">Automation</h3>
+                <p>...</p>
+              </div>
+            </div>
+
+            <div class="circle" id="circle12" role="region" aria-labelledby="circle12-label">
+              <div class="content12">
+                <h3 id="circle12-label">Speed</h3>
+                <p>...</p>
+              </div>
+            </div>
+
+            <div class="circle" id="circle13" role="region" aria-labelledby="circle13-label">
+              <div class="content13">
+                <h3 id="circle13-label">Problem Solving</h3>
+                <p>...</p>
+              </div>
+            </div>
+
+            <div class="circleh">
+              <h2 class="po2">Take a look at my projects</h2>
+            </div>
+          </div>
+
+          <div class="orbit4" id="orbit4" aria-hidden="false">
+            <!-- Wrap link around accessible control (anchor already ok) -->
+            <div class="circle" id="circle77" tabindex="0" aria-controls="circle7" aria-expanded="false" aria-label="Open C template">
+              <a href="template1/template1.html"><div class="content77"><h3>C</h3></div></a>
+            </div>
+
+            <div class="circle" id="circle88" tabindex="0" aria-controls="circle8" aria-expanded="false" aria-label="Open C++ template">
+              <a href="template2/template2.html"><div class="content88"><h3>C++</h3></div></a>
+            </div>
+
+            <div class="circle" id="circle99" tabindex="0" aria-controls="circle9" aria-expanded="false" aria-label="Open Python template">
+              <a href="template3/templat2.html"><div class="content99"><h3>Python</h3></div></a>
+            </div>
+
+            <div class="circle" id="circle1010" tabindex="0" aria-controls="circle10" aria-expanded="false" aria-label="Open JavaScript template">
+              <a href="template4/template4.html"><div class="content1010"><h3>JavaScript</h3></div></a>
+            </div>
+
+            <div class="circle" id="circle1212" tabindex="0" aria-controls="circle12" aria-expanded="false" aria-label="Open HTML/CSS template">
+              <a href="template5/template5.css"><div class="content1212"><h3>HTML/CSS</h3></div></a>
+            </div>
+
+            <div class="circle" id="circle1313" tabindex="0" aria-controls="circle13" aria-expanded="false" aria-label="Open UI template">
+              <a href="template6/template1.html"><div class="content1313"><h3>UI</h3></div></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title" class="main-title">Pricing</h2>
+      <div class="container">
+        <div class="plans">
+          <div class="plan">
+            <div class="head">
+              <h3>Basic</h3>
+              <span>19</span>
+            </div>
+            <ul>
+              <li>feature no 1</li>
+              <li>extra feature</li>
+              <li>extra feature no 2</li>
+              <li>feature</li>
+            </ul>
+            <div class="foot">
+              <a href="#" class="btn">Buy now</a>
+            </div>
+          </div>
+          <div class="plan">
+            <div class="head">
+              <h3>Basic</h3>
+              <span>19</span>
+            </div>
+            <ul>
+              <li>feature no 1</li>
+              <li>extra feature</li>
+              <li>extra feature no 2</li>
+              <li>feature</li>
+            </ul>
+            <div class="foot">
+              <a href="#" class="btn">Buy now</a>
+            </div>
+          </div>
+          <div class="plan">
+            <div class="head">
+              <h3>Basic</h3>
+              <span>19</span>
+            </div>
+            <ul>
+              <li>feature no 1</li>
+              <li>extra feature</li>
+              <li>extra feature no 2</li>
+              <li>feature</li>
+            </ul>
+            <div class="foot">
+              <a href="#" class="btn">Buy now</a>
+            </div>
+          </div>
+          <div class="plan">
+            <div class="head">
+              <h3>Basic</h3>
+              <span>19</span>
+            </div>
+            <ul>
+              <li>feature no 1</li>
+              <li>extra feature</li>
+              <li>extra feature no 2</li>
+              <li>feature</li>
+            </ul>
+            <div class="foot">
+              <a href="#" class="btn">Buy now</a>
+            </div>
+          </div>
+        </div>
+        <p class="contact-text">Contact us if you have a special request</p>
+        <a href="#" class="contact-link">Contact us</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="main-title">Contact Me</h2>
+      <div class="container">
+        <div class="contact-info">
+          <h3>Let’s Work Together</h3>
+          <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+          <ul>
+            <li>📧 Email: <a href="mailto:ahmedyacin3374@gmail.com">ahmedyacin3374@gmail.com</a></li>
+            <li><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram: <a href="https://www.instagram.com/prog.log7/" target="_blank" rel="noopener noreferrer">@prog.log7</a></li>
+            <li><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X: <a href="https://x.com/AhmedY22211" target="_blank" rel="noopener noreferrer">@AhmedY22211</a></li>
+          </ul>
+        </div>
+
+        <!-- Accessible contact form: labels added and IDs set -->
+        <form class="contact-form" action="https://formspree.io/f/xblaepgv" method="POST" aria-labelledby="contact-form-title">
+          <h3 id="contact-form-title" class="sr-only">Contact form</h3>
+
+          <label for="contact-name" class="sr-only">Your name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Your Name" required>
+
+          <label for="contact-email" class="sr-only">Your email</label>
+          <input id="contact-email" type="email" name="email" placeholder="Your Email" required>
+
+          <label for="contact-message" class="sr-only">Your message</label>
+          <textarea id="contact-message" name="message" placeholder="Your Message" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+
+          <input type="hidden" name="_subject" value="New Contact Form Submission">
+          <input type="hidden" name="_next" value="thanks.html">
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <p>© 2025 Ali. All Rights Reserved.</p>
       <ul class="footer-links">
@@ -266,14 +415,16 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="socials">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://x.com/yourusername" target="_blank">X</a>
-        <a href="https://t.me/yourusername" target="_blank">Telegram</a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://github.com/aliali734" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.facebook.com/prog1log" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://x.com/AhmedY22211" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.instagram.com/prog.log7/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </footer>
 
   <script src="Main-file.js"></script>
+  <script src="header-menu.js" defer></script>
 </body>
 </html>
